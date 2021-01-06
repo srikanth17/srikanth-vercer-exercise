@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+import App from './components/App';
+import GlobalStyle from './GlobalStyle';
+import store from './store';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'react-toggle/style.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
+    <GlobalStyle />
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
